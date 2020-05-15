@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header.ejs') %>
+
+  <body>
+    <!-- Navigation -->
+    <%- include('layouts/navbar.ejs') %>
+    <!-- Page Header -->
+    <header
+      class="masthead"
+      style="background-image: url('img/post-bg.jpg');"
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>New Post</h1>
+              <span class="subheading">Create Posts For Your Blog </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <form
+            action="/posts/store"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Title"
+                  id="title"
+                  name="title"
+                />
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Quote</label>
+                <input
+                  type="quote"
+                  class="form-control"
+                  placeholder="Quote"
+                  id="quote"
+                  name="quote"
+                />
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Body</label>
+                <textarea
+                  rows="5"
+                  class="form-control"
+                  placeholder="Content"
+                  id="body"
+                  name="body"
+                ></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Image</label>
+                <input
+                  type="file"
+                  class="form-control"                  
+                  id="image"
+                  name="image"
+                />
+              </div>
+            <br />
+            <div id="success"></div>
+            <div class="form-group">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="sendMessageButton"
+              >
+                Create
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Footer -->
+    <%- include('layouts/footer.ejs') %>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Custom scripts for this template -->
+    <%- include('layouts/scripts.ejs') %>
+  </body>
+</html>
